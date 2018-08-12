@@ -4,13 +4,30 @@
       <h1 class="weihnachsDOMLabel">WeihnachtsDOM</h1>
     </div>
     <div class="toolItem">
-      <button v-on:click="$emit('onCreate')" class="toolsButton">Create Tree</button>
+      <button v-on:click="onClick" class="toolsButton">{{buttonLabel}}</button>
     </div>
   </div>
 </template>
 
 <script>
-  export default {}
+  export default {
+    data: function () {
+      return {
+        buttonLabel: "Create Tree"
+      };
+    },
+    methods: {
+      onClick () {
+        if(this.buttonLabel == "Create Tree") {
+          this.buttonLabel = "Destroy Tree";
+          this.$emit("onClick", "create");
+        } else {
+          this.buttonLabel = "Create Tree";
+          this.$emit("onClick", "destroy");
+        }
+      }
+    }
+  }
 </script>
 
 

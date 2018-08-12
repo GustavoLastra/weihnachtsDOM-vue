@@ -5,14 +5,9 @@
 </template>
 
 <script>
-/*import Tree from './components/tree/tree.vue'*/
-
-export default {
-  name: 'App'/*,
-  components: {
-    "app-tree": Tree
-  }*/
-}
+  export default {
+    name: 'App'
+  }
 </script>
 
 <style>

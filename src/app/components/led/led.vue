@@ -11,9 +11,7 @@
   </div>
 </template>
 <script>
-  import { treeBus } from '../../../main'
-  /*import LedList from "../led-list/led-list.vue"*/
-
+  import { TreeBus } from '../../shared/treeBus'
   export default {
     props: {
       led: Object
@@ -25,12 +23,9 @@
     },
     methods: {
       update(id, turn) {
-        treeBus.turn(id, turn);
+        TreeBus.turn(id, turn);
       }
-    }/*,
-    components: {
-      "app-led-list": LedList
-    }*/
+    }
   }
 </script>
 

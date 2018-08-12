@@ -4,7 +4,7 @@
 <template>
   <div class="rootContainer">
     <div class="toolsContainer">
-      <app-tools v-on:onCreate="onCreate"></app-tools>
+      <app-tools v-on:onClick="onClick"></app-tools>
     </div>
 
       <div v-if="showTree">
@@ -21,30 +21,30 @@
   </div>
 </template>
 <script>
-  import { treeBus } from '../../../main'
+  import { TreeBus } from '../../shared/treeBus'
 
   export default {
     data: function () {
       return {
-        actualTree: treeBus.tree,
+        actualTree: TreeBus.tree,
         showTree: false
       };
     },
     methods: {
-      onCreate() {
-        this.showTree = true;
+      onClick(todo) {
+        if (todo=="create") {
+          this.showTree = true;
+        } else {
+          this.showTree = false;
+        }
       }
 
     },
     created() {
-      treeBus.$on('updateTree', (tree) => {
+      TreeBus.$on('updateTree', (tree) => {
         this.actualTree = tree;
       });
-    }/*,
-    components: {
-      "app-tools": Tools,
-      "app-led-list": LedList
-    }*/
+    }
   }
 </script>
 <style>

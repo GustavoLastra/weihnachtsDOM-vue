@@ -9,8 +9,6 @@
   </div>
 </template>
 <script>
-  /*import Led from "../led/led.vue"*/
-
   export default {
     props: {
         ledList: Array
@@ -19,10 +17,7 @@
       return {
         actualLedList: this.ledList
       };
-    },
-    /*components: {
-      "app-led": Led
-    }*/
+    }
   }
 </script>
 <style>
