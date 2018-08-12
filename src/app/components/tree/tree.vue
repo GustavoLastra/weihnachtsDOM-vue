@@ -6,21 +6,22 @@
     <div class="toolsContainer">
       <app-tools v-on:onCreate="onCreate"></app-tools>
     </div>
-    <div class="treeContainer" >
+
       <div v-if="showTree">
-        <app-led-list
-          :ledList="actualTree"></app-led-list>
+        <div class="treeContainer" >
+          <app-led-list
+            :ledList="actualTree"></app-led-list>
+        </div>
       </div>
       <div v-if="!showTree">
-        <div class="hint">Please click on the "Create Tree" button</div>
+        <div class="hintContainer">
+          <div class="hint">Please click on the "Create Tree" button</div>
+        </div>
       </div>
-    </div>
   </div>
 </template>
 <script>
   import { treeBus } from '../../../main'
-/*  import Tools from "../tools/tools.vue"
-  import LedList from "../led-list/led-list.vue"*/
 
   export default {
     data: function () {
@@ -76,9 +77,16 @@
   .hint {
     text-align: center;
     color: #FFFFFF;
-    font-family: Material-Design-Icons;
-    font-style: italic;
-
+    line-height: 26px;
+    padding: 10px 20px;
   }
 
+  .hintContainer {
+    background-color:gainsboro;
+    width: 40%;
+    margin: auto;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin-top: 2%;
+    overflow: auto;
+  }
 </style>

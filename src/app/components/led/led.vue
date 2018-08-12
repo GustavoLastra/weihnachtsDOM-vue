@@ -55,7 +55,6 @@
     border: none;
     outline: none;
     text-decoration: none;
-    font-size: 1%;
     font-weight: bold;
     height: 25px;
     margin-left: 50%;
