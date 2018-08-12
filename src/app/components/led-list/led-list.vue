@@ -3,7 +3,7 @@
  */
 <template>
   <div class="ledList">
-    <app-led v-for="led in actualLedList"
+    <app-led v-for="led in actualLedList" :key="led.id"
              :led="led">
     </app-led>
   </div>
