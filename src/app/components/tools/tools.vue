@@ -10,6 +10,7 @@
 </template>
 
 <script>
+  import { TreeBus } from '../../shared/treeBus'
   export default {
     data: function () {
       return {
@@ -24,6 +25,7 @@
         } else {
           this.buttonLabel = "Create Tree";
           this.$emit("onClick", "destroy");
+          TreeBus.initialTree();
         }
       }
     }

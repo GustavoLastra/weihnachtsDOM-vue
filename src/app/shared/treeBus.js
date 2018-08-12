@@ -7,8 +7,9 @@ export const TreeBus = new Vue({
     tree: InitialledList,
   },
   methods: {
-    changeAge(age) {
-      this.$emit('ageWasEdited', age);
+    initialTree() {
+      console.log("resetTree");
+      this.turn("1", false);
     },
 
     turn(id, newButtonState) {
