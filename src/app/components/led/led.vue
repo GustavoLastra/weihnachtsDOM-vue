@@ -61,7 +61,7 @@
   }
 
   .ledDiv {
-    margin: 0;
+    margin: auto;
   }
 
 </style>
