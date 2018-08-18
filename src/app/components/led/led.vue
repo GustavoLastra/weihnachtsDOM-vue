@@ -1,5 +1,5 @@
 <template>
-  <div class="ledDiv">
+  <div>
     <button  v-on:click="update(led.id, !led.buttonState)"
              v-bind:class="led.buttonState ? 'led backgroundOn' : 'led backgroundOff'">
       {{led.label}}
@@ -58,10 +58,6 @@
   .led:active {
     background-color: #f44336;
     transform: translateY(2px);
-  }
-
-  .ledDiv {
-    margin: auto;
   }
 
 </style>
